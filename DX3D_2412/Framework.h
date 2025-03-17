@@ -178,13 +178,14 @@ typedef function<void(int)> IntParamEvent;
 #include "Objects/Pacman/CilingManager.h"
 
 #include "Objects/Clicker/Hermit.h"
-#include "Objects/Clicker/ObjectManager.h"
 #include "Objects/Clicker/OreManager.h"
 #include "Objects/Clicker/Ore.h"
 #include "Objects/Clicker/OreInventory.h"
 #include "Objects/Clicker/ClickerUIManager.h"
 #include "Objects/Clicker/OreSlot.h"
 #include "Objects/Clicker/ClickerMapManager.h"
+#include "Objects/Clicker/Shop.h"
+#include "Objects/Clicker/Shopslot.h"
 
 
 

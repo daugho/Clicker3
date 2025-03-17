@@ -40,7 +40,7 @@ void Player::Update()
 
 	light->position = localPosition;
 	light->direction = CAM->GetForward();
-
+	ForceOpenShopUI()
 	SetCursor();
 	Control();
 	ToggleLight();
@@ -113,29 +113,13 @@ void Player::ToggleInventory()
 	}
 }
 
-//void Player::CheckInteraction()
-//{
-//	if (!KEY->Down('E')) return;
-//
-//	Hermit* closestHermit = nullptr;
-//	float minDistance = 5.0f; // `E`를 누를 수 있는 최대 거리
-//
-//	for (Hermit* hermit : hermits)
-//	{
-//		float distance = Vector3::Distance(GetGlobalPosition(), hermit->GetGlobalPosition());
-//
-//		if (distance < minDistance)
-//		{
-//			closestHermit = hermit;
-//			minDistance = distance;
-//		}
-//	}
-//
-//	if (closestHermit)
-//	{
-//		ClickerUIManager::Get()->ShowHermitShop(closestHermit);
-//	}
-//}
+void Player::ForceOpenShopUI()
+{
+	if (KEY->Down('B'))
+	{
+		isShopOpen = true;
+	}
+}
 
 
 Vector3 Player::GetVelocity()
@@ -160,6 +144,11 @@ void Player::ToggleLight()
 			light->isActive = 0;
 		}
 	}
+}
+
+void Player::OpenMerchant1Shop()
+{
+
 }
 
 void Player::Control()

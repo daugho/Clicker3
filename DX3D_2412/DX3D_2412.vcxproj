@@ -188,9 +188,10 @@
     <ClInclude Include="Objects\Basic\Plane.h" />
     <ClInclude Include="Objects\Basic\Quad.h" />
     <ClInclude Include="Objects\Basic\Sphere.h" />
-    <ClInclude Include="Objects\Clicker\BaseManager.h" />
     <ClInclude Include="Objects\Clicker\ClickerMapManager.h" />
     <ClInclude Include="Objects\Clicker\ClickerUIManager.h" />
+    <ClInclude Include="Objects\Clicker\Shop.h" />
+    <ClInclude Include="Objects\Clicker\Shopslot.h" />
     <ClInclude Include="Objects\Collider\BoxCollider.h" />
     <ClInclude Include="Objects\Collider\CapsuleCollider.h" />
     <ClInclude Include="Objects\Collider\Collider.h" />
@@ -212,7 +213,6 @@
     <ClInclude Include="Objects\Pacman\FloorManager.h" />
     <ClInclude Include="Objects\Clicker\Hermit.h" />
     <ClInclude Include="Objects\Pacman\MapManager.h" />
-    <ClInclude Include="Objects\Clicker\ObjectManager.h" />
     <ClInclude Include="Objects\Clicker\Ore.h" />
     <ClInclude Include="Objects\Clicker\OreInventory.h" />
     <ClInclude Include="Objects\Clicker\OreManager.h" />
@@ -290,6 +290,8 @@
     <ClCompile Include="Objects\Basic\Quad.cpp" />
     <ClCompile Include="Objects\Basic\Sphere.cpp" />
     <ClCompile Include="Objects\Clicker\ClickerMapManager.cpp" />
+    <ClCompile Include="Objects\Clicker\Shop.cpp" />
+    <ClCompile Include="Objects\Clicker\Shopslot.cpp" />
     <ClCompile Include="Objects\Collider\BoxCollider.cpp" />
     <ClCompile Include="Objects\Collider\CapsuleCollider.cpp" />
     <ClCompile Include="Objects\Collider\Collider.cpp" />
@@ -309,7 +311,6 @@
     <ClCompile Include="Objects\Pacman\FloorManager.cpp" />
     <ClCompile Include="Objects\Clicker\Hermit.cpp" />
     <ClCompile Include="Objects\Pacman\MapManager.cpp" />
-    <ClCompile Include="Objects\Clicker\ObjectManager.cpp" />
     <ClCompile Include="Objects\Clicker\Ore.cpp" />
     <ClCompile Include="Objects\Clicker\OreInventory.cpp" />
     <ClCompile Include="Objects\Clicker\OreManager.cpp" />

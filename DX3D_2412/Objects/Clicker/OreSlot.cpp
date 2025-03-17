@@ -63,4 +63,5 @@ void OreSlot::UpdateData()
 
 	image->SetActive(true);
 	image->GetMaterial()->SetDiffuseMap(item.texturePath);
+	image->GetMaterial()->SetShader(L"Basic/Texture.hlsl");
 }

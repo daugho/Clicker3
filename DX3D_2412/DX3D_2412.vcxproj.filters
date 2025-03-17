@@ -291,9 +291,6 @@
     <ClInclude Include="Objects\Pacman\FloorManager.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Objects\Clicker\ObjectManager.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="Objects\Clicker\OreManager.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
@@ -327,7 +324,10 @@
     <ClInclude Include="Objects\Clicker\ClickerMapManager.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Objects\Clicker\BaseManager.h">
+    <ClInclude Include="Objects\Clicker\Shop.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Objects\Clicker\Shopslot.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
@@ -572,9 +572,6 @@
     <ClCompile Include="Objects\Pacman\FloorManager.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Objects\Clicker\ObjectManager.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="Objects\Clicker\Ore.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
@@ -600,6 +597,12 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Objects\Clicker\ClickerMapManager.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Objects\Clicker\Shop.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Objects\Clicker\Shopslot.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
