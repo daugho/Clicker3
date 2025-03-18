@@ -21,8 +21,10 @@ Player::Player()
 	light->isActive = 0;
 
 	oreInventory = new OreInventory();
+	shopOpne = new Shop();
 	collider = new SphereCollider(1.0f); // 반지름 1.0 설정
 	collider->SetParent(this);
+	
 }
 
 Player::~Player()

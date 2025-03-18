@@ -15,12 +15,16 @@ Shop::~Shop()
 
 void Shop::Update()
 {
+    Quad::Update();
+    UpdateWorld();
+
 }
 
 void Shop::Render()
 {
-    if (!isActive) return;
+    //if (!isActive) return;
     Quad::Render();
+
     for (ShopSlot* slot : slots) {
         slot->Render();
     }

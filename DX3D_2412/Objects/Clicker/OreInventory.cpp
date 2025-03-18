@@ -25,7 +25,6 @@ void OreInventory::Update()
     for (OreSlot* slot : slots) {
         slot->Update();
     }
-    Environment::Get()->SetAlphaBlend(false);
 }
 
 void OreInventory::Render()

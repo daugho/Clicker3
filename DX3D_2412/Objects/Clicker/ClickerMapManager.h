@@ -17,7 +17,7 @@ public:
 private:
     Player* player;
     OreManager* oreManager;
-    OreInventory* inventory;
+    //OreInventory* inventory;
     vector<Cube*> roomCubes;
     Cube* floor;
     vector<BoxCollider*> wallColliders;
