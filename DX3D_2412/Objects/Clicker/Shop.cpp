@@ -1,6 +1,6 @@
 #include "Framework.h"
 
-Shop::Shop() : Quad(L"Resources/Textures/UI/Shop.png") {
+Shop::Shop() : Quad(L"Resources/Textures/UI/Shop1.png") {
     localPosition = CENTER;
     UpdateWorld();
     CreateSlots();

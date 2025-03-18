@@ -3,6 +3,7 @@
 class OreManager;
 struct DropData;
 class OreInventory;
+class Shop;
 class Player : public SphereCollider
 {
 private:
@@ -47,13 +48,13 @@ private:
 	LightBuffer::Light* light;
 
 	OreInventory* oreInventory;
-
+	Shop* shopOpne;
 	float miningCooldown = 1.0f;  //Ã¤±¼ Äð´Ù¿î (ÃÊ´ç 1È¸)
 	float miningTimer = 0.0f;
 
-	bool isInventoryOpen = false;
 	SphereCollider* collider;
-	bool isLightOn = true;
 	float miningRange = 3.0f;
-	bool isShopOpen;
+	bool isInventoryOpen = false;
+	bool isLightOn = true;
+	bool isShopOpen=false;
 };

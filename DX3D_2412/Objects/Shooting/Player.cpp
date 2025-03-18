@@ -40,7 +40,7 @@ void Player::Update()
 
 	light->position = localPosition;
 	light->direction = CAM->GetForward();
-	ForceOpenShopUI()
+	ForceOpenShopUI();
 	SetCursor();
 	Control();
 	ToggleLight();
@@ -117,7 +117,8 @@ void Player::ForceOpenShopUI()
 {
 	if (KEY->Down('B'))
 	{
-		isShopOpen = true;
+		isShopOpen = !isShopOpen;
+		shopOpne->SetActive(isShopOpen);
 	}
 }
 

@@ -7,7 +7,7 @@ CubeMapEditor::CubeMapEditor()
 	//Load();
 	material->SetShader(L"Custom/MapEditor.hlsl");	
 	floorManager = new FloorManager(Vector3(0, 0, 0), { 10, 10 }, this);
-	objectManager = new ObjectManager(floorManager);
+	//objectManager = new ObjectManager(floorManager);
 }
 
 CubeMapEditor::~CubeMapEditor()
@@ -24,19 +24,19 @@ void CubeMapEditor::Update()
 {
 	if (player != nullptr)
 	{
-		vector<BoxCollider*> hitCoins = objectManager->GetCollisionObjects(5.0f);
-
-		for (BoxCollider* collider : objectManager->GetAllColliders())
-		{
-			if (find(hitCoins.begin(), hitCoins.end(), collider) != hitCoins.end())
-			{
-				collider->SetColor(Float4(1.0f, 0.0f, 0.0f, 1.0f));
-			}
-			else
-			{
-				collider->SetColor(Float4(1, 1, 1, 1));
-			}
-		}
+		//vector<BoxCollider*> hitCoins = objectManager->GetCollisionObjects(5.0f);
+		//
+		//for (BoxCollider* collider : objectManager->GetAllColliders())
+		//{
+		//	if (find(hitCoins.begin(), hitCoins.end(), collider) != hitCoins.end())
+		//	{
+		//		collider->SetColor(Float4(1.0f, 0.0f, 0.0f, 1.0f));
+		//	}
+		//	else
+		//	{
+		//		collider->SetColor(Float4(1, 1, 1, 1));
+		//	}
+		//}
 	}
 	if (KEY->Down(VK_NUMPAD7))
 	{
@@ -49,7 +49,7 @@ void CubeMapEditor::Update()
 		preview.second->Update();
 	for (FloorManager* floor : floorManagers)
 		floor->Update();
-	objectManager->Update();
+	//objectManager->Update();
 	OreManager::Get()->Update();
 	floorManager->Update();
 }
@@ -131,7 +131,7 @@ void CubeMapEditor::Edit()
 		ImGui::TreePop();
 	}
 	material->Edit();
-	objectManager->Edit();
+	//objectManager->Edit();
 }
 
 void CubeMapEditor::Save()

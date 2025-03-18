@@ -17,9 +17,6 @@ void ShopSlot::Render() {
     Font::Get()->RenderText(to_string(item.price) + "G", GetGlobalPosition());
 }
 
-void ShopSlot::Update()
-{
-}
 
 void ShopSlot::SetItem(const ShopItemData& item) {
     this->item = item;

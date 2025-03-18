@@ -13,7 +13,7 @@ ClickerMapManager::ClickerMapManager()
 	oreManager = OreManager::Get();
 	oreManager->CreatOre({ 5, 5 }, { 10, 10 }, 0);
 
-	hermit1 = new Hermit("machine");
+	hermit1 = new Hermit("machine", HermitType::Merchant1);
 	hermit1->SetLocalPosition(-4, 0.5, 2);
 	hermit1->SetLocalRotation(0, 0, 0);
 	floor = new Cube(Vector3(10,1,30),Vector2(2,6));

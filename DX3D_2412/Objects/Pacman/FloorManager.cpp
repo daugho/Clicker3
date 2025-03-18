@@ -4,7 +4,7 @@ FloorManager::FloorManager(Vector3 position, POINT size, CubeMapEditor* editor) 
 {
 	InitializerFloor();
 
-	objectManager = new ObjectManager(this);
+	//objectManager = new ObjectManager(this);
 	floortileBuffer = new FloatValueBuffer();
 
 	material->SetShader(L"Custom/MapEditor.hlsl");
@@ -32,7 +32,7 @@ FloorManager::~FloorManager()
 void FloorManager::Render()
 {
 	floortileBuffer->SetPS(10);
-	objectManager->Render();
+	//objectManager->Render();
 	collider->Render();
 
 	Cube::Render();
@@ -121,7 +121,7 @@ void FloorManager::Update()
 	SetSelectTile();
 	SetEdit();
 	collider->Update();
-	objectManager->Update();
+	//objectManager->Update();
 }
 
 void FloorManager::UpdateMesh()
@@ -171,10 +171,10 @@ void FloorManager::SetEdit()
 			CreateWall(wallSize, r, q);
 			break;
 		case FHermit:
-			objectManager->CreateHermit(floorselectTile,floormapSize);
+			//objectManager->CreateHermit(floorselectTile,floormapSize);
 			break;
 		case FOre:
-			objectManager->CreateOre(floorselectTile, floormapSize,oreID);
+			//objectManager->CreateOre(floorselectTile, floormapSize,oreID);
 			break;
 		case FItem:
 			break;
