@@ -190,6 +190,7 @@
     <ClInclude Include="Objects\Basic\Sphere.h" />
     <ClInclude Include="Objects\Clicker\ClickerMapManager.h" />
     <ClInclude Include="Objects\Clicker\ClickerUIManager.h" />
+    <ClInclude Include="Objects\Clicker\Room.h" />
     <ClInclude Include="Objects\Clicker\Shop.h" />
     <ClInclude Include="Objects\Clicker\Shopslot.h" />
     <ClInclude Include="Objects\Collider\BoxCollider.h" />
@@ -290,6 +291,7 @@
     <ClCompile Include="Objects\Basic\Quad.cpp" />
     <ClCompile Include="Objects\Basic\Sphere.cpp" />
     <ClCompile Include="Objects\Clicker\ClickerMapManager.cpp" />
+    <ClCompile Include="Objects\Clicker\Room.cpp" />
     <ClCompile Include="Objects\Clicker\Shop.cpp" />
     <ClCompile Include="Objects\Clicker\Shopslot.cpp" />
     <ClCompile Include="Objects\Collider\BoxCollider.cpp" />

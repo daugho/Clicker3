@@ -10,7 +10,6 @@ public:
     void Update();
     void Render();
     void CreateSlots();
-    void SetActive(bool active) { isActive = active; }
     bool IsActive() const { return isActive; }
 
 private:

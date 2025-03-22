@@ -25,7 +25,6 @@ public:
 
 	void Render() ; 
 	void Update() ;
-	void Shop1Slot();
 
 	bool IsRayCollision(const Ray& ray, RaycastHit* hit);
 
@@ -35,8 +34,6 @@ public:
 private:
 	void LoadShopTable();
 	void LoadShopUI();
-	void ByeOre();
-	void SellItem();
 	void Edit();
 private:
 

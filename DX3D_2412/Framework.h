@@ -35,6 +35,7 @@
 #include <list>
 #include <functional>
 #include <algorithm>
+
 #include <d3d11.h>
 #include <d3dcompiler.h>
 #include <DirectXMath.h>
@@ -186,6 +187,7 @@ typedef function<void(int)> IntParamEvent;
 #include "Objects/Clicker/ClickerMapManager.h"
 #include "Objects/Clicker/Shop.h"
 #include "Objects/Clicker/Shopslot.h"
+#include "Objects/Clicker/Room.h"
 
 
 

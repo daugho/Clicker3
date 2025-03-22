@@ -32,7 +32,7 @@ public:
 public:
     void Update();
     void Render();
-    void CreatOre(POINT selectTile, POINT mapSize, int oreID);
+    void CreatOre(Vector3 pos, int oreID);
     void LoadOreTable(string path);
     void LoadDropTable(int oreID);
     oreData GetOreData(int oreID) { return oreTable[oreID];}

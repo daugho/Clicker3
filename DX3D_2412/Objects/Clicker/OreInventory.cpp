@@ -30,7 +30,6 @@ void OreInventory::Update()
 void OreInventory::Render()
 {
     //if (!isActive) return;
-
     Quad::Render();
 
     for (OreSlot* slot : slots) {

@@ -34,7 +34,7 @@ Player::~Player()
 
 void Player::Update()
 {
-	if (ClickerUIManager::Get()->IsInventoryOpen())
+	if (ClickerUIManager::Get()->IsInventoryOpen()|| ClickerUIManager::Get()->IsShopOpen())
 		return;
 
 	collider->SetLocalPosition(GetLocalPosition());
@@ -42,7 +42,6 @@ void Player::Update()
 
 	light->position = localPosition;
 	light->direction = CAM->GetForward();
-	ForceOpenShopUI();
 	SetCursor();
 	Control();
 	ToggleLight();
@@ -51,7 +50,9 @@ void Player::Update()
 
 	UpdateWorld();
 	Mining();
-	ToggleInventory();
+	ToggleUI();
+	//ForceOpenShopUI();
+	//ToggleInventory();
 }
 
 void Player::Render()
@@ -112,6 +113,22 @@ void Player::ToggleInventory()
 	{
 		isInventoryOpen = !isInventoryOpen;
 		oreInventory->SetActive(isInventoryOpen);
+	}
+}
+
+void Player::ToggleUI()
+{
+	if (KEY->Down('I'))
+	{
+		isInventoryOpen = !isInventoryOpen;
+		oreInventory->SetActive(isInventoryOpen);
+	}
+
+	// B 키를 눌러 상점 열기/닫기
+	if (KEY->Down('B'))
+	{
+		isShopOpen = !isShopOpen;
+		shopOpne->SetActive(isShopOpen);
 	}
 }
 

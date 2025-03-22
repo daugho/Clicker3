@@ -143,12 +143,67 @@ bool BoxCollider::IsSeperateAxis(const Vector3& D, const Vector3& axis, const Ob
 
 bool BoxCollider::PushBox(BoxCollider* collider, RaycastHit* hit)
 {
-    return false;
+    if (!IsBoxCollision(collider))
+        return false;
+
+    ObbDesc box1, box2;
+    GetObb(box1);
+    collider->GetObb(box2);
+
+    Ray ray(collider->Center(), (box1.center - box2.center).GetNormalized());
+    if (IsRayCollision(ray, hit)) // 충돌한 면을 찾음
+    {
+        if (Vector3::Dot(ray.direction, hit->normal) > 0)
+        {
+            hit->normal *= -1; // 벽 바깥쪽으로 밀어내기 위해 방향 반전
+        }
+    }
+
+    return true;
 }
 
 bool BoxCollider::PushSphere(SphereCollider* collider, RaycastHit* hit)
 {
-    return false;
+    if (!IsActive()) return false;
+
+    ObbDesc box;
+    GetObb(box);
+
+
+    Vector3 closestPointToSphere = box.center;
+
+    for (int i = 0; i < 3; i++)
+    {
+        Vector3 direction = collider->GetGlobalPosition() - box.center;
+        float length = Vector3::Dot(box.axis[i], direction);
+
+        float mult = (length < 0.0f) ? -1.0f : 1.0f;
+        length = min(abs(length), box.halfSize[i]);
+        closestPointToSphere += box.axis[i] * length * mult;
+    }
+
+
+    Vector3 sphereCenter = collider->GetGlobalPosition();
+    float distance = Vector3::Distance(sphereCenter, closestPointToSphere);
+    float overlap = collider->Radius() - distance;
+
+
+    if (overlap <= 0.0f)
+        return false;
+
+    Vector3 direction = (sphereCenter - closestPointToSphere).GetNormalized();
+
+
+    Vector3 pushDirection = direction * overlap;
+
+    // 충돌 정보 저장
+    if (hit != nullptr)
+    {
+        hit->point = pushDirection.GetNormalized();
+        hit->distance = overlap;
+    }
+
+    return true;
 }
 
 bool BoxCollider::PushCapsule(CapsuleCollider* collider, RaycastHit* hit)

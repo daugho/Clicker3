@@ -14,7 +14,7 @@ MineCraftScene::MineCraftScene()
 
 	skybox = new Skybox(L"Resources/Textures/Landscape/Snow_ENV.dds");
 	oreManager = new OreManager();
-	oreManager->CreatOre({ 5, 5 }, { 10, 10 }, 0);
+	oreManager->CreatOre({5,5,5}, 0);
 }
 
 MineCraftScene::~MineCraftScene()

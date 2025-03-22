@@ -26,11 +26,8 @@ void OreManager::Render()
         ore->Render();
 }
 
-void OreManager::CreatOre(POINT selectTile, POINT mapSize, int oreID)
+void OreManager::CreatOre(Vector3 pos, int oreID)
 {
-    Vector3 startPos = Vector3(mapSize.x * -0.5f, 0.0f, mapSize.y * -0.5f);
-    Vector3 pos = startPos + Vector3(selectTile.x + 0.5f, 1.0f, selectTile.y + 0.5f);
-
     string defaultModel = "MinerOre";
     Ore* ore = new Ore(oreID, defaultModel);
     ore->SetLocalPosition(pos);

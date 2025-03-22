@@ -1,5 +1,5 @@
 #pragma once
-
+class Room;
 class ClickerMapManager : public Singleton<ClickerMapManager>
 {
     friend class Singleton;
@@ -9,10 +9,10 @@ public:
 
     void Update();
     void Render();
-    void CreateCube(Cube*& cube, Vector3 size, Vector3 position, const wstring& texturePath);
     void CreateRoom1();
     void CreateRoom2();
-    bool CheckCollision(Vector3 nextPos);
+    void CheckCollision();
+
 
 private:
     Player* player;
@@ -24,4 +24,6 @@ private:
     vector<BoxCollider*> floorColliders;
     bool isFreeView = false;
     Hermit* hermit1;
+    list<Block*> blocks;
+    Room* room1;
 };

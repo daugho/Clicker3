@@ -5,7 +5,9 @@ ClickerUIManager::ClickerUIManager()
     CreateUI();
 
     inventory = new OreInventory();
-    inventory->SetActive(false);    
+    inventory->SetActive(false);
+    shopOpen = new Shop();
+    shopOpen->SetActive(false);
 }
 
 ClickerUIManager::~ClickerUIManager()
@@ -16,14 +18,13 @@ ClickerUIManager::~ClickerUIManager()
 
 void ClickerUIManager::Update()
 {
-    if (KEY->Down('I'))
-    {
-        isInventoryOpen = !isInventoryOpen;
-        ShowCursor(isInventoryOpen);
-        inventory->SetActive(isInventoryOpen);
-    }
+    HandleUIToggle();
 
-    inventory->Update();
+    if (isInventoryOpen)
+        inventory->Update();
+
+    if (isShopOpen)
+        shopOpen->Update();
 }
 
 void ClickerUIManager::Render()
@@ -32,6 +33,7 @@ void ClickerUIManager::Render()
 
     cursor->Render();
     inventory->Render();
+    shopOpen->Render();
 }
 
 void ClickerUIManager::Edit()
@@ -41,19 +43,19 @@ void ClickerUIManager::Edit()
 
 void ClickerUIManager::ToggleInventory()
 {
-    isInventoryOpen = !isInventoryOpen;
-    inventory->SetActive(isInventoryOpen);
-
-    if (isInventoryOpen)
-    {
-        ShowCursor(true); // ? 마우스 커서 활성화
-        //CAM->IsActive(true); // ? 카메라 움직임 잠금
-    }
-    else
-    {
-        ShowCursor(false); // ? 마우스 커서 비활성화
-       // CAM->IsActive(false); // ? 카메라 움직임 해제
-    }
+   // isInventoryOpen = !isInventoryOpen;
+   // inventory->SetActive(isInventoryOpen);
+   //
+   // if (isInventoryOpen)
+   // {
+   //     ShowCursor(true); // ? 마우스 커서 활성화
+   //     //CAM->IsActive(true); // ? 카메라 움직임 잠금
+   // }
+   // else
+   // {
+   //     ShowCursor(false); // ? 마우스 커서 비활성화
+   //    // CAM->IsActive(false); // ? 카메라 움직임 해제
+   // }
 }
 
 void ClickerUIManager::SetCursorColor(const Float4& color)
@@ -71,4 +73,21 @@ void ClickerUIManager::CreateUI()
     cursor = new Quad(L"Resources/Textures/UI/cursor.png");
     cursor->SetLocalPosition(CENTER);
     cursor->UpdateWorld();    
+}
+
+void ClickerUIManager::HandleUIToggle()
+{
+    if (KEY->Down('I'))
+    {
+        isInventoryOpen = !isInventoryOpen;
+        ShowCursor(isInventoryOpen);
+        inventory->SetActive(isInventoryOpen);
+    }
+
+    if (KEY->Down('B'))
+    {
+        isShopOpen = !isShopOpen;
+        ShowCursor(isShopOpen);
+        shopOpen->SetActive(isShopOpen);
+    }
 }

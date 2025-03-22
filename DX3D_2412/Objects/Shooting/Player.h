@@ -21,6 +21,7 @@ public:
 	void SetVelocity(const Vector3& newVelocity);
 	void Mining();
 	void ToggleInventory();
+	void ToggleUI();
 	void ForceOpenShopUI();
 	Vector3 GetVelocity();
 	SphereCollider* GetCollider() { return collider; }
@@ -54,7 +55,7 @@ private:
 
 	SphereCollider* collider;
 	float miningRange = 3.0f;
-	bool isInventoryOpen = false;
 	bool isLightOn = true;
+	bool isInventoryOpen = false;
 	bool isShopOpen=false;
 };
